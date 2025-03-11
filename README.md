@@ -10,7 +10,7 @@ option (BUILD_SHARED_LIBS "Build as a shared library" ON)
 
 changed to 
 ```cmake
-option (BUILD_STATIC_LIBS "Build as a shared library" ON)
+option (BUILD_STATIC_LIBS "Build as a static library" ON)
 ```
 
 This is downloaded with a different CMakeLists.txt for an example GeoLibrary project:
