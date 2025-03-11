@@ -81,7 +81,7 @@ else ()
 endif ()
 
 # (2) Build which libraries?
-option (BUILD_SHARED_LIBS "Build as a shared library" ON)
+option (BUILD_STATIC_LIBS "Build as a shared library" ON)
 
 # Ignore BUILD_SHARED_LIBS and build both shared and static libraries.
 # (This replaces the variable GEOGRAPHICLIB_LIB_TYPE in earlier
