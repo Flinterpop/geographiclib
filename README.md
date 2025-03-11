@@ -1,5 +1,38 @@
 # GeographicLib
 
+This is a ford of geographiclib wiht one change: CMakeLists.txt is changed to build a STATIC library instead of shared. This is downloaded with a CMakeLists.txt for an example GeoLibrary project:
+
+```cmake
+cmake_minimum_required (VERSION 3.17.0)
+project (geodesictest)
+
+set (GeographicLib_USE_STATIC_LIBS ON) 
+
+include(FetchContent)
+FetchContent_Declare(GeographicLib
+  GIT_REPOSITORY https://github.com/Flinterpop/geographiclib
+  GIT_TAG        main
+)
+
+FetchContent_MakeAvailable(GeographicLib)
+
+if (NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
+  # Set a default build type for single-configuration cmake generators
+  # if no build type is set.
+  set (CMAKE_BUILD_TYPE "Release")
+endif ()
+
+set (GeographicLib_USE_STATIC_LIBS ON) 
+
+add_executable (${PROJECT_NAME} example-Geodesic-small.cpp)
+target_link_librar
+```
+
+
+
+
+
+
 GeographicLib is a small C++ library for
 
 * geodesic and rhumb line calculations;
