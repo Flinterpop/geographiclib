@@ -1,4 +1,4 @@
-# GeographicLib
+
 
 This is a ford of geographiclib wiht one change: CMakeLists.txt is changed to build a STATIC library instead of shared. This is downloaded with a CMakeLists.txt for an example GeoLibrary project:
 
@@ -25,13 +25,36 @@ endif ()
 set (GeographicLib_USE_STATIC_LIBS ON) 
 
 add_executable (${PROJECT_NAME} example-Geodesic-small.cpp)
-target_link_librar
+target_link_libraries (${PROJECT_NAME} GeographicLib::GeographicLib)
+```
+
+### Example Project
+```c++
+// Small example of using the GeographicLib::Geodesic class
+
+#include <iostream>
+#include <GeographicLib/Geodesic.hpp>
+
+using namespace std;
+using namespace GeographicLib;
+
+int main() {
+    const Geodesic& geod = Geodesic::WGS84();
+    // Distance from JFK to LHR
+    double
+        lat1 = 40.6, lon1 = -73.8, // JFK Airport
+        lat2 = 51.6, lon2 = -0.5;  // LHR Airport
+    double s12;
+    geod.Inverse(lat1, lon1, lat2, lon2, s12);
+    cout << s12 / 1000 << " km\n";
+}
+
 ```
 
 
 
 
-
+# GeographicLib
 
 GeographicLib is a small C++ library for
 
