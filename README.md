@@ -1,21 +1,19 @@
 
 
-This is a ford of geographiclib wiht one change: CMakeLists.txt is changed to build a STATIC library instead of shared. 
-See line 84 of CMakeLists.txt
+This is a fork of geographiclib with one change: CMakeLists.txt is changed to build a STATIC library instead of shared. 
+See line 84 of CMakeLists.txt:
 
 was
-
 ```cmake
 option (BUILD_SHARED_LIBS "Build as a shared library" ON)
 ```
 
 changed to 
-
 ```cmake
 option (BUILD_STATIC_LIBS "Build as a shared library" ON)
 ```
 
-This is downloaded with a CMakeLists.txt for an example GeoLibrary project:
+This is downloaded with a different CMakeLists.txt for an example GeoLibrary project:
 
 ```cmake
 cmake_minimum_required (VERSION 3.17.0)
